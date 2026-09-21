@@ -4,9 +4,9 @@
     box-sizing:border-box;
 }
 body{
-    background-color:#1e1e1e;
+    background-color:#061f2e;
     font-family: sans-serif;
-    color:#a0a0a0;
+    color:#cbc6c6;
     line-height:1.6;
 }
 .big{
@@ -22,12 +22,15 @@ body{
     background-color:#04413f;
     border:1.5px solid #270d0d;
     border-radius:15px;
-    padding:30px;
+    padding: 30px;
+    position:sticky;
+    top:40px;
+   
 
 }
 .box2{
-    height:200vh;
-    background-color: #0d102f;
+    height:300vh;
+    background-color: #030734;
     border:1.5px solid #270d0d;
     border-radius:15px;
     padding:40px;
@@ -48,15 +51,15 @@ body{
     font-size:1.5rem;
     font-weight:700;
     margin-top:20px;
-    color:rgb(230, 223, 223);
+    color:rgb(227, 222, 222);
 }
 .profile p{
     background-color:#dfd8c5;
-    padding:5px 15px;
+    padding:5px 40px;
     color:rgb(219, 219, 13);
     border:1px solid #18448f;
-    font-weight:600;
-    font-size:0.8rem;
+    font-weight:800;
+    font-size:1rem;
     border-radius: 8px;
     display: inline-block;
     margin-top:10px;
@@ -76,7 +79,7 @@ body{
     color:#100a0a
 }
 .value{
-    color:#e0e0e0;
+    color:#210909;
 
 }
 
@@ -135,15 +138,15 @@ nav a{
 /* about section start */
 
 .heading{
-    color:#dbcbcb;
+    color:#c5bfbf;
     font-size:2rem;
-    margin-bottom:10px;
+    margin-bottom:2px;
     
     
 }
-.line{
+.line1{
     width:143px;
-    height:3px;
+    height:2px;
     background-color: #FFBF00;
     margin-bottom: 15px;
    
@@ -160,14 +163,14 @@ nav a{
 
 .line2{
     width:80px;
-    height:3px;
+    height:2px;
     background-color: #FFBF00;
     margin-bottom: 15px;
 }
 .container{
     display:grid;
     grid-template-columns:repeat(auto-fit , minmax(120px,1fr));
-    gap:40px;
+    gap:35px;
     text-align: center;
     
     
@@ -175,22 +178,154 @@ nav a{
 .item{
     padding:20px;
     border-radius: 10px;
-    border:2px solid #3a3a3a;
-    height:100px;
-    width:120px;
-    background-color: #0c0222;
-
+    border:3px solid #3a3a3a;
+    height:110px;
+    width:130px;
+    background-color: #030e22;
+     text-align:center;
+    margin-top: 15px;
+    transition:transform 0.3s ease,box-shadow 0.3s ease;
 }
 
 
 .item img{
     height:45px;
     width:48px;
+    filter: invert(40%) sepia(100%) saturate(1000%) hue-rotate(350deg) brightness(110%) contrast(101%);
+   
+}
+.item h3{
+    font-size: 1rem;
+    font-weight: 500;
     
+}
+.item:hover{
+    transform:scale(1.1);
+    box-shadow:0px 0px 10px 5px rgba(236, 12, 225, 0.3);
+}
+
+#skills{
+    margin-bottom: 18px;
+}
+
+/* now education section */
+.line3{
+    width:152px;
+    height:2px;
+    background-color: #FFBF00;
+    margin-bottom: 15px;
+}
+
+#skills{
+    margin-bottom: 18px;
+}
+
+.edtech{
+    position:relative;
+}
+
+
+.year{
+    font-size:1.2rem;
+    color:#dbc660;
+    margin-top: 20px;
+   
+}
+.degree{
+    color:#e0e0e0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.college{
+     font-style:inherit;
+     color: #b4994e;
     
     
 }
-.container h3{
-    text-align:center ;
-    font-size: 0.8rem;
+.edfirst,.edsecond,.edthird{
+    position: relative;
+     padding-left: 35px;
+}
+
+.goal{
+    height:15px;
+    width:15px;
+    border:4px solid rgb(220, 169, 74);
+    border-radius: 50%;
+    position:absolute;
+    top:5px;
+    left:0px;
+    z-index: 5;
+    background-color: #030e22;
+}
+.liner{
+    position:absolute;
+    width:2px;
+    left:6px;
+    top:5px;
+    bottom:7px;
+    border:2px solid rgb(220, 169, 74);
+}
+
+.line4{
+    width:130px;
+    height:2px;
+    background-color: #FFBF00;
+    margin-bottom: 15px;
+}
+#education{
+     margin-bottom: 18px;
+}
+
+/* now start to portfolio section */
+.project-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:60px;
+    margin-top: 35px;
+   
+
+
+
+}
+.project img{
+    height:150px;
+    width:100%;
+    display:block;
+    
+}
+
+.project{
+    background-color:#030e22;
+    border-radius:12px;
+    border:1px solid #2c0606;
+    overflow:hidden;
+    transition:transform 0.2s ease,box-shadow 0.2s ease;
+
+}
+.card{
+    padding:20px;
+}
+.card h3{
+    margin-bottom: 10px;
+    color:#0cd6cf
+}
+.card p{
+    color:#b8af0b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.card span{
+    background-color: #3f2a1e;
+    color: rgb(38, 62, 72);
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-right: 15px;
+}
+.project:hover{
+    transform:translateY(-10px);
+    box-shadow:0px 0px 10px 5px rgba(236, 12, 225, 0.3);
 }
