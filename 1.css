@@ -4,7 +4,7 @@
     box-sizing:border-box;
 }
 body{
-    background-color:#061f2e;
+    background-color:#055e95;
     font-family: sans-serif;
     color:#cbc6c6;
     line-height:1.6;
@@ -17,24 +17,31 @@ body{
     padding-top:40px;
     margin: auto;
 }
+
 .box1{
-    height:100vh;
-    background-color:#04413f;
+    height: calc(100vh - 80px);
+    background-color:#4e2a14;
     border:1.5px solid #270d0d;
     border-radius:15px;
     padding: 30px;
     position:sticky;
     top:40px;
-   
+     z-index: 10;
+    
+  
 
 }
 .box2{
-    height:300vh;
-    background-color: #030734;
+    height:auto;
+    background-color: #0a1264;
     border:1.5px solid #270d0d;
     border-radius:15px;
     padding:40px;
+    position: relative;
+    z-index: 1;
 }
+   
+
 
 /* profile section*/
 .profile{
@@ -44,7 +51,7 @@ body{
     height:120px;
     width:120px;
     border-radius: 50%;
-    border:1px solid #4a4a4a;
+    border:3px solid #0ec2ef;
   
 }
 .profile h2{
@@ -54,13 +61,13 @@ body{
     color:rgb(227, 222, 222);
 }
 .profile p{
-    background-color:#dfd8c5;
+    background-color:#201a09;
     padding:5px 40px;
     color:rgb(219, 219, 13);
     border:1px solid #18448f;
     font-weight:800;
     font-size:1rem;
-    border-radius: 8px;
+    border-radius: 20px;
     display: inline-block;
     margin-top:10px;
 
@@ -69,17 +76,17 @@ body{
 
 .contact{
     margin-top:20px;
-    border-top:2px solid #040e1f;
+    border-top:2px solid #9fb9e6;
     padding-top: 20px;
 }
 
 .lable{
     font-weight:600;
     font-size:1.2rem;
-    color:#100a0a
+    color:#e0dbdb
 }
 .value{
-    color:#210909;
+    color:rgb(219, 219, 13);
 
 }
 
@@ -90,7 +97,7 @@ body{
 /*social section*/
 .social{
     margin-top:20px;
-    border-top:2px solid #040e1f;
+    border-top:2px solid #a3bde9;
     padding-top: 20px;
     text-align: center;
     
@@ -98,19 +105,26 @@ body{
 .social img{
     height:25px;
     width:25px;
-    margin-left: 5px;
-    filter:brightness(1);
-    transition:filter 0.3s ease;
+    margin-left: 20px;
+   filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
 }
+.social .github,
+.social .linkedin {
+    height: 29px;
+    width: 29px;
+}
+
+
 .social img:hover{
-    filter:brightness(1) invert(1);
+    filter: brightness(0);
 }
 
  /* this all about box2 navigation section */
 
 #navigation{
     
-    border-bottom: 2px solid #3a3a3a;
+    border-bottom: 2px solid #704f4f;
     margin-bottom:12px;
     padding-bottom: 20px;
 }
@@ -123,7 +137,7 @@ nav{
 }
 nav a{
     text-decoration:none;
-    color:rgb(109, 108, 108);
+    color:rgb(231, 224, 224);
     font-weight:600;
     font-size:1rem;
     transition: filter 0.3s ease;
@@ -131,7 +145,7 @@ nav a{
 }
 
 .active,nav a:hover{   
-   color:#6b6113;
+   color:#e3c90a;
   
 }
 
@@ -318,8 +332,8 @@ nav a{
     margin-bottom: 20px;
 }
 .card span{
-    background-color: #3f2a1e;
-    color: rgb(38, 62, 72);
+    background-color: #9e5135;
+    color: rgb(246, 230, 19);
     padding: 5px 15px;
     border-radius: 5px;
     font-size: 1rem;
@@ -328,4 +342,155 @@ nav a{
 .project:hover{
     transform:translateY(-10px);
     box-shadow:0px 0px 10px 5px rgba(236, 12, 225, 0.3);
+}
+.request{
+    width:100%;
+    height:100px;
+    background-color: rgb(3, 82, 109);
+    color:#f0eae2;
+    margin-top: 80px;
+    text-align: center;
+     border-radius: 20px;
+    
+
+}
+.request h2{
+    margin-bottom: 10px;
+}
+
+#choose span a{
+   background-color: #0a1249;
+    color: rgb(223, 209, 22);
+    padding: 5px 30px;
+    border-radius: 7px;
+    font-size: 1.3rem;
+    margin-right: 40px;
+    text-decoration: none;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Main box */
+    .big {
+        display: block;
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    /* Right side box */
+    .box2 {
+        width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+
+    /* Navigation */
+    nav {
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    /* Skills */
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .item {
+        width: 100%;
+    }
+
+    /* Portfolio projects */
+    .project-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 25px;
+    }
+
+    .project {
+        width: 100%;
+    }
+
+    .project img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h3 {
+        font-size: 1.3rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+
+    /* HTML / CSS / Grid wale spans */
+    .card span {
+        display: inline-block;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        padding: 5px 15px;
+    }
+
+    /* Do you want to explore box */
+    .request {
+        width: 100%;
+        height: auto;
+        min-height: 180px;
+        margin-top: 50px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .request h2 {
+        font-size: 1.3rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    /* Yes / No */
+    #choose {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+    }
+
+    #choose span {
+        display: block;
+    }
+
+    #choose span a {
+        display: inline-block;
+        margin-right: 0;
+        padding: 6px 30px;
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width:768px) {
+    .box1 {
+        position: static;
+        height: auto;
+        margin-bottom: 15px;
+    }
+    .box2 {
+        width: 100%;
+        padding: 20px;
+    }
 }
