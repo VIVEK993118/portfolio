@@ -1,0 +1,665 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://images.pexels.com/photos/28779686/pexels-photo-28779686.jpeg?_gl=1*igqrhs*_ga*MjA0NDE3Mzk1Ni4xNzkwMTIwNjEz*_ga_8JE65Q40S6*czE3OTAxMjA2MTMkbzEkZzEkdDE3OTAxMjA5OTQkajYwJGwwJGgw");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.login-box {
+    width: 760px;
+    height: 550px;
+    display: flex;
+    border: 10px solid #04010e;
+    border-radius: 30px;
+    overflow: visible;
+    box-shadow: 0 0 30px rgba(7, 2, 21, 0.08);
+}
+
+.lamp-area {
+    width: 38%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 15px;
+    background: #0e2f4b;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+}
+
+.lamp {
+    font-size: 85px;
+    margin-top: 35px;
+    cursor: grab;
+    filter: drop-shadow(0 0 40px yellow);
+}
+
+.lamp-wire {
+    width: 4px;
+    height: 120px;
+    background: #d992c4;
+}
+
+.login-area {
+    width: 62%;
+    height: 100%;
+    padding: 18px 35px;
+    background: #021130c8;
+    color: white;
+    border-radius: 0 20px 20px 0;
+    overflow: visible;
+}
+
+.login-area h1 {
+    font-size: 31px;
+    margin-bottom: 5px;
+    color: #edac35;
+}
+
+.login-area > p {
+    color: #f3eeee;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.login-area h3 {
+    color: #edac35;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.login-area form {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.login-area input {
+    width: 85%;
+    height: 43px;
+    font-weight: bold;
+    padding: 10px 13px;
+    background: #6c094e;
+    border: 3px solid hsl(199, 94%, 28%);
+    border-radius: 8px;
+    color: rgb(228, 227, 227);
+    outline: none;
+    transition: 0.3s;
+}
+
+.login-area input::placeholder {
+    color: #fffdfd;
+    opacity: 1;
+}
+
+.login-area input:hover {
+    transform: scale(1.03);
+}
+
+.login-area input:focus {
+    border-color: #f2f7f8;
+    font-size: 15px;
+}
+
+.phone-group {
+    width: 85%;
+    height: 43px;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    position: relative;
+    z-index: 100;
+    
+    
+}
+
+.country-picker {
+    width: 125px;
+    min-width: 125px;
+    height: 43px;
+    position: relative;
+    z-index: 500;
+}
+
+.country-selected {
+    width: 100%;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 5px 8px;
+    background: #2f1728;
+    color: white;
+    border: 3px solid hsl(72, 17%, 94%);
+    border-right: 1px solid white;
+    border-radius: 8px 0 0 8px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+.country-selected img {
+    width: 25px;
+    height: 17px;
+    object-fit: cover;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.country-selected .arrow {
+    font-size: 9px;
+    margin-left: auto;
+}
+
+.country-list {
+    position: absolute;
+    top: 46px;
+    left: 1;
+    width: 180px;
+    max-height: 260px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: none;
+    background: #acad9a;
+    border: 2px solid rgb(29, 27, 27);
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    z-index: 99999;
+}
+
+.country-list.show {
+    display: block;
+}
+
+.country-list::-webkit-scrollbar {
+    width: 7px;
+}
+
+.country-list::-webkit-scrollbar-track {
+    background: #1b0c17;
+    border-radius: 10px;
+}
+
+.country-list::-webkit-scrollbar-thumb {
+    background: #edac35;
+    border-radius: 10px;
+}
+
+.country-option {
+    width: 100%;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+    background: #2f1728;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.country-option:hover {
+    background: #503047;
+}
+
+.country-option img {
+    width: 25px;
+    height: 17px;
+    object-fit: cover;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.phone-group > input {
+    width: calc(100% - 125px);
+    height: 43px;
+    border: 3px solid white;
+    border-radius: 0 8px 8px 0;
+     border: 3px solid hsl(199, 94%, 28%);
+}
+
+.login-area button {
+    padding: 10px;
+    width: 85%;
+    height: 40px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    background: rgb(4, 45, 75);
+    color: white;
+    transition: 0.3s;
+    border: none;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.login-area button:hover {
+    transform: scale(1.03);
+}
+
+.registered-area {
+    width: 82%;
+    text-align: center;
+    margin-top: 7px;
+}
+
+.registered-area p {
+    margin-bottom: 2px;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.registered-area .login-link {
+    width: auto;
+    height: auto;
+    padding: 2px 5px;
+    background: transparent;
+    color: #edac35;
+    font-size: 13px;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.registered-area .login-link:hover {
+    color: white;
+    transform: none;
+}
+
+.otp-popup,
+.registered-popup,
+.registered-otp-popup {
+    position: fixed;
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: 0.4s ease;
+    z-index: 10000;
+}
+
+.otp-popup.show,
+.registered-popup.show,
+.registered-otp-popup.show {
+    bottom: 0;
+}
+
+.otp-box,
+.registered-box,
+.registered-otp-box {
+    width: 360px;
+    background: #021130;
+    border: 3px solid white;
+    border-radius: 18px 18px 0 0;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.5);
+}
+
+.otp-box h2,
+.registered-box h2,
+.registered-otp-box h2 {
+    color: #edac35;
+    margin-bottom: 7px;
+    font-size: 22px;
+}
+
+.registered-area p {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.otp-box p,
+.registered-box p,
+.registered-otp-box p {
+    color: white;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.otp-box input,
+.registered-otp-box input {
+    width: 100%;
+    height: 43px;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 5px;
+    border: 2px solid white;
+    border-radius: 7px;
+    background: #2f1728;
+    color: white;
+    outline: none;
+    margin-bottom: 8px;
+}
+
+.registered-box .phone-group {
+    width: 100%;
+    height: 43px;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 10px;
+}
+
+.registered-box .country-picker {
+    width: 110px;
+    min-width: 110px;
+    height: 43px;
+    position: relative;
+}
+
+.registered-box .country-selected {
+    width: 100%;
+    height: 43px;
+    margin: 0;
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registered-box .phone-group > input {
+    width: calc(100% - 110px);
+    height: 43px;
+    margin: 0;
+    padding: 10px;
+    background: #2f1728;
+    border: 3px solid white;
+    border-radius: 0 7px 7px 0;
+    color: white;
+    outline: none;
+}
+
+.registered-box .country-list {
+    width: 230px;
+}
+
+.otp-box button,
+.registered-box button,
+.registered-otp-box button {
+    width: 100%;
+    height: 38px;
+    padding: 8px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 7px;
+    background: rgb(4, 45, 75);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.otp-box button:hover,
+.registered-box button:hover,
+.registered-otp-box button:hover {
+    transform: scale(1.03);
+}
+
+#otpMessage,
+#registeredMessage,
+#registeredOtpMessage {
+    margin-top: 8px;
+    color: #edac35;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+
+    body {
+        min-height: 100vh;
+        height: 100vh;
+        padding: 8px;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 420px;
+        height: 96vh;
+        max-height: 600px;
+        display: flex;
+        flex-direction: column;
+        border-width: 3px;
+        border-radius: 22px;
+    }
+
+    .lamp-area {
+        width: 100%;
+        height: 145px;
+        min-height: 145px;
+        padding-top: 5px;
+        border-radius: 18px 18px 0 0;
+    }
+
+    .lamp {
+        font-size: 52px;
+        margin-top: 8px;
+    }
+
+    .lamp-wire {
+        width: 3px;
+        height: 55px;
+    }
+
+    .login-area {
+        width: 100%;
+        height: calc(100% - 145px);
+        padding: 15px 18px;
+        border-radius: 0 0 18px 18px;
+        overflow: visible;
+    }
+
+    .login-area h1 {
+        font-size: 24px;
+        margin-bottom: 3px;
+    }
+
+    .login-area > p {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .login-area h3 {
+        font-size: 17px;
+        margin-bottom: 7px;
+    }
+
+    .login-area form {
+        width: 100%;
+        gap: 7px;
+    }
+
+    .login-area input {
+        width: 100%;
+        height: 39px;
+        padding: 8px 11px;
+        font-size: 14px;
+        border-width: 2px;
+    }
+
+    .login-area input:focus {
+        font-size: 14px;
+    }
+
+    .login-area input:hover {
+        transform: none;
+    }
+
+    .phone-group {
+        width: 100%;
+        height: 39px;
+        gap: 0;
+        z-index: 100;
+    }
+
+    .country-picker {
+        width: 100px;
+        min-width: 100px;
+        height: 39px;
+        z-index: 500;
+    }
+
+    .country-selected {
+        height: 39px;
+        border-width: 2px;
+        font-size: 11px;
+        padding: 4px 6px;
+        gap: 5px;
+    }
+
+    .country-selected img {
+        width: 22px;
+        height: 15px;
+    }
+
+    .country-selected .arrow {
+        font-size: 8px;
+    }
+
+    .country-list {
+        top: 42px;
+        left: 0;
+        width: 220px;
+        max-height: 220px;
+        z-index: 99999;
+    }
+
+    .country-option {
+        min-height: 36px;
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+
+    .country-option img {
+        width: 22px;
+        height: 15px;
+    }
+
+    .phone-group > input {
+        width: calc(100% - 100px);
+        height: 39px;
+        border: 3px solid white;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .login-area button {
+        width: 100%;
+        height: 37px;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .login-area button:hover {
+        transform: none;
+    }
+
+    .registered-area {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .registered-area p {
+        font-size: 11px;
+        margin-bottom: 1px;
+    }
+
+    .registered-area .login-link {
+        font-size: 12px;
+        padding: 1px 4px;
+    }
+
+    .otp-box,
+    .registered-box,
+    .registered-otp-box {
+        width: calc(100% - 20px);
+        max-width: 360px;
+        padding: 18px 15px;
+    }
+
+    .otp-box h2,
+    .registered-box h2,
+    .registered-otp-box h2 {
+        font-size: 20px;
+    }
+
+    .otp-box p,
+    .registered-box p,
+    .registered-otp-box p {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .otp-box input,
+    .registered-otp-box input {
+        height: 40px;
+        font-size: 17px;
+    }
+
+    .registered-box .phone-group {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .registered-box .country-picker {
+        width: 90px;
+        min-width: 90px;
+        height: 40px;
+    }
+
+    .registered-box .country-selected {
+        width: 100%;
+        height: 40px;
+        margin: 0;
+    }
+
+    .registered-box .phone-group > input {
+        width: calc(100% - 90px);
+        height: 40px;
+        margin: 0;
+        border: 3px solid rgb(242, 241, 241);
+        border-radius: 0 7px 7px 0;
+    }
+
+    .registered-box .country-list {
+        width: 220px;
+        max-height: 220px;
+    }
+
+    .otp-box button,
+    .registered-box button,
+    .registered-otp-box button {
+        height: 36px;
+        font-size: 13px;
+    }
+}

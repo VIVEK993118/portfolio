@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore More</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <div class="lamp-area">
+
+            <div class="lamp">
+                💡
+            </div>
+
+            <div class="lamp-wire"></div>
+
+        </div>
+
+        <div class="login-area">
+
+            <h1>😊 Welcome!</h1>
+
+            <p>Enter your details to play the game.</p>
+
+            <h3>Signup</h3>
+
+            <form id="loginForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <div class="phone-group">
+
+                    <div class="country-picker" id="countryPicker">
+
+                        <button
+                            type="button"
+                            class="country-selected"
+                            id="countrySelected"
+                        >
+                            <img id="countryFlag" src="" alt="Flag">
+                            <span id="countryCodeText">+91</span>
+                            <span class="arrow">▼</span>
+                        </button>
+
+                        <div class="country-list" id="countryList"></div>
+
+                    </div>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        placeholder="10 digit mobile number"
+                        inputmode="numeric"
+                        maxlength="10"
+                        required
+                    >
+
+                </div>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    minlength="5"
+                    maxlength="5"
+                    pattern="(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{5}"
+                    title="Password must contain exactly 5 characters with at least one letter and one digit."
+                    required
+                >
+
+                <button type="submit" id="otp">
+                    Request OTP
+                </button>
+
+                <button type="reset">
+                    Reset
+                </button>
+
+                <button
+                    type="button"
+                    onclick="window.location.href='index.html'"
+                    id="back"
+                >
+                    Back
+                </button>
+
+            </form>
+
+            <div class="registered-area">
+
+                <p>Already registered?</p>
+
+                <button
+                    type="button"
+                    id="loginHere"
+                    class="login-link"
+                >
+                    Login here
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="otp-popup" id="otpPopup">
+
+        <div class="otp-box">
+
+            <h2>🔐 Enter OTP</h2>
+
+            <p>
+                Enter the OTP sent to your mobile number.
+            </p>
+
+            <input
+                type="text"
+                id="otpInput"
+                placeholder="Enter OTP"
+                maxlength="6"
+                inputmode="numeric"
+            >
+
+            <button type="button" id="verifyOtp">
+                Verify OTP
+            </button>
+
+            <button type="button" id="closeOtp">
+                Cancel
+            </button>
+
+            <p id="otpMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <div class="registered-popup" id="registeredPopup">
+
+        <div class="registered-box">
+
+            <h2>🔑 Welcome Back!</h2>
+
+            <p>Enter your registered mobile number.</p>
+
+            <div class="phone-group">
+
+                <div class="country-picker" id="registeredCountryPicker">
+
+                    <button
+                        type="button"
+                        class="country-selected"
+                        id="registeredCountrySelected"
+                    >
+                        <img id="registeredCountryFlag" src="" alt="Flag">
+                        <span id="registeredCountryCodeText">+91</span>
+                        <span class="arrow">▼</span>
+                    </button>
+
+                    <div
+                        class="country-list"
+                        id="registeredCountryList"
+                    ></div>
+
+                </div>
+
+                <input
+                    type="tel"
+                    id="registeredMobile"
+                    placeholder="10 digit mobile number"
+                    inputmode="numeric"
+                    maxlength="10"
+                >
+
+            </div>
+
+            <button type="button" id="registeredOtp">
+                Request OTP
+            </button>
+
+            <button type="button" id="closeRegistered">
+                Cancel
+            </button>
+
+            <p id="registeredMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <div class="registered-otp-popup" id="registeredOtpPopup">
+
+        <div class="registered-otp-box">
+
+            <h2>🔐 Verify OTP</h2>
+
+            <p>
+                Enter the OTP sent to your registered mobile.
+            </p>
+
+            <input
+                type="text"
+                id="registeredOtpInput"
+                placeholder="Enter OTP"
+                maxlength="6"
+                inputmode="numeric"
+            >
+
+            <button type="button" id="verifyRegisteredOtp">
+                Verify OTP
+            </button>
+
+            <button type="button" id="closeRegisteredOtp">
+                Cancel
+            </button>
+
+            <p id="registeredOtpMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
